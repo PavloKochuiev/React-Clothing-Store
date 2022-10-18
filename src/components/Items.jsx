@@ -1,23 +1,23 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-const Items = ({ title, price }) => {
+const Items = ({ title, price, image, sizes }) => {
+  const [activeSize, setActiveSize] = useState(0);
+
   return (
     <div className='items'>
-      <img className='items__image' src='' alt='' />
+      <img className='items__image' src={image} alt={title} />
       <h4 className='items__title'>{title}</h4>
       <div className='items__selector'>
         <ul>
-          <li className='active'>one</li>
-          <li>two</li>
-        </ul>
-        <ul>
-          <li className='active'>size 1</li>
-          <li>size 2</li>
-          <li>size 3</li>
+          {sizes.map((size, index) => (
+            <li key={size} onClick={() => setActiveSize(index)} className={activeSize === index ? 'active' : ''}>
+              {size}
+            </li>
+          ))}
         </ul>
       </div>
       <div className='items__bottom'>
-        <div className='items__price'>{price}</div>
+        <div className='items__price'>{price}.00 £</div>
         <div className='button button--outline button--add'>
           <svg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <path

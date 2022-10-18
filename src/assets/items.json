@@ -1,0 +1,83 @@
+[
+  {
+    "id": 0,
+    "image": "https://images.asos-media.com/products/topman-classic-fit-t-shirt-in-black/201808733-1-black?$n_320w$&wid=317&fit=constrain",
+    "title": "Topman classic fit t-shirt",
+    "sizes": ["S", "M", "L"],
+    "price": 7.0,
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 1,
+    "image": "https://images.asos-media.com/products/jack-jones-originals-oversized-t-shirt-with-mountain-back-print-in-white/203776832-1-white?$n_640w$&wid=513&fit=constrain",
+    "title": "Jack & Jones t-shirt",
+    "sizes": ["S", "M", "L"],
+    "price": 16.0,
+    "category": 0,
+    "rating": 6
+  },
+  {
+    "id": 2,
+    "image": "https://images.asos-media.com/products/asos-design-90s-oversized-style-cord-shirt-in-collegiate-green/202576316-1-green?$n_640w$&wid=513&fit=constrain",
+    "title": "90s oversized style cord shirt in collegiate green",
+    "sizes": ["M", "L"],
+    "price": 27.0,
+    "category": 1,
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "image": "https://images.asos-media.com/products/topman-cord-shirt-in-green/202585077-1-green?$n_640w$&wid=513&fit=constrain",
+    "title": "Topman cord shirt in green",
+    "sizes": ["M", "L"],
+    "price": 33.0,
+    "category": 2,
+    "rating": 2
+  },
+  {
+    "id": 4,
+    "image": "https://images.asos-media.com/products/topman-oversized-1-4-zip-sweatshirt-in-brown/202111901-1-brown?$n_320w$&wid=317&fit=constrain",
+    "title": "Topman 1/4 zip sweatshirt in brown",
+    "sizes": ["S", "M", "L", "XL"],
+    "price": 36.0,
+    "category": 3,
+    "rating": 8
+  },
+  {
+    "id": 5,
+    "image": "https://images.asos-media.com/products/asos-design-oversized-half-zip-faux-fur-sweatshirt-in-all-over-leopard-print/202879892-1-multi?$n_320w$&wid=317&fit=constrain",
+    "title": "Half zip faux fur sweatshirt",
+    "sizes": ["S", "M", "L", "XL"],
+    "price": 48.0,
+    "category": 2,
+    "rating": 2
+  },
+  {
+    "id": 6,
+    "image": "https://images.asos-media.com/products/collusion-unisex-knitted-jumper-in-warped-checked-print/201533116-1-multi?$n_320w$&wid=317&fit=constrain",
+    "title": "Unisex knitted jumper",
+    "sizes": ["S", "M", "L"],
+    "price": 21.0,
+    "category": 1,
+    "rating": 9
+  },
+  {
+    "id": 7,
+    "image": "https://images.asos-media.com/products/adidas-originals-adicolor-70s-unisex-cropped-sweater-vest-in-pink/202829019-1-pink?$n_320w$&wid=317&fit=constrain",
+    "title": "Originals 'adicolor 70s' unisex cropped sweater",
+    "sizes": ["S", "M", "L"],
+    "price": 55.0,
+    "category": 4,
+    "rating": 10
+  },
+  {
+    "id": 8,
+    "image": "https://images.asos-media.com/products/topman-knitted-tank-with-detailed-stitch-in-green/202226300-1-green?$n_320w$&wid=317&fit=constrain",
+    "title": "Topman knitted tank",
+    "sizes": ["M", "L"],
+    "price": 36.0,
+    "category": 5,
+    "rating": 10
+  }
+]
