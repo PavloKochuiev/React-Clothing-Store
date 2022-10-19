@@ -1,18 +1,21 @@
-import logo from '../assets/img/logo.png'
+import logo from '../assets/img/logo.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <div className='header'>
       <div className='container'>
-        <div className='header__logo'>
-          <img width='60' src={logo} alt='react clothing store logo' />
-          <div>
-            <h1>React Clothing Store</h1>
-            <p>in future we trust</p>
+        <Link to='/'>
+          <div className='header__logo'>
+            <img width='60' src={logo} alt='react clothing store logo' />
+            <div>
+              <h1>React Clothing Store</h1>
+              <p>in future we trust</p>
+            </div>
           </div>
-        </div>
+        </Link>
         <div className='header__cart'>
-          <a href='/cart.html' className='button button--cart'>
+          <Link to='/cart' className='button button--cart'>
             <span>50</span>
             <div className='button__delimiter'></div>
             <svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -39,7 +42,7 @@ const Header = () => {
               />
             </svg>
             <span>5</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@
   margin-bottom: 65px;
 
   &:not(:nth-of-type(4n)) {
-    margin-right: 35px;
+    margin-right: 0px;
   }
 
   &__image {
@@ -17,6 +17,7 @@
     font-size: 20px;
     font-weight: 900;
     letter-spacing: 1%;
+    margin-top: 5px;
     margin-bottom: 20px;
   }
 

@@ -1,9 +1,9 @@
+import React from 'react';
 import Header from './components/Header';
-import Categories from './components/Categories';
-import Sort from './components/Sort';
-import Items from './components/Items';
-
-import items from './assets/items.json';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Cart from './pages/Cart';
+import { Routes, Route } from 'react-router-dom';
 
 import './scss/app.scss';
 
@@ -13,16 +13,11 @@ const App = () => {
       <Header />
       <div className='content'>
         <div className='container'>
-          <div className='content__top'>
-            <Categories />
-            <Sort />
-          </div>
-          <h2 className='content__title'>All items</h2>
-          <div className='content__items'>
-            {items.map((obj) => (
-              <Items key={obj.id} {...obj} />
-            ))}
-          </div>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
         </div>
       </div>
     </div>
