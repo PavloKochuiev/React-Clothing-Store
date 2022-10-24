@@ -17,10 +17,11 @@ const Home = () => {
         setItems(items);
         setIsLoading(false);
       });
+    window.scrollTo(0, 0);
   }, []);
 
   return (
-    <>
+    <div className='container'>
       <div className='content__top'>
         <Categories />
         <Sort />
@@ -31,7 +32,7 @@ const Home = () => {
           ? [...new Array(6)].map((index) => <Loader key={index} />)
           : items.map((obj) => <Items key={obj.id} {...obj} />)}
       </div>
-    </>
+    </div>
   );
 };
 
