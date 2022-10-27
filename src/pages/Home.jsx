@@ -4,8 +4,11 @@ import Items from '../components/Items';
 import Loader from '../components/Loader';
 import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
+import { SearchContext } from '../App';
+import { useContext } from 'react';
 
-const Home = ({ searchValue }) => {
+const Home = () => {
+  const { searchValue } = useContext(SearchContext);
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState(0);

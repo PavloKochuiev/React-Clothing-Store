@@ -1,7 +1,11 @@
 import styles from './Search.module.scss';
 import closeIcon from '../../assets/img/closeIcon.png';
+import { useContext } from 'react';
+import { SearchContext } from '../../App';
 
-const Search = ({ searchValue, setSearchValue }) => {
+const Search = () => {
+  const { searchValue, setSearchValue } = useContext(SearchContext);
+
   return (
     <div className={styles.general}>
       <input
