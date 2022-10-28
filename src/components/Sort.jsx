@@ -1,16 +1,21 @@
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSort } from '../redux/slices/filterSlice';
 
-const Sort = ({ value, onClickSort }) => {
+const sortList = [
+  { name: 'popularity', sortProperty: 'rating' },
+  { name: 'price', sortProperty: 'price' },
+  { name: 'alphabet', sortProperty: 'title' },
+];
+
+const Sort = () => {
+  const dispatch = useDispatch();
+  const selectedSort = useSelector((state) => state.filterSlice.selectedSort);
+
   const [isSortVisible, setIsSortVisible] = useState(false);
 
-  const sortList = [
-    { name: 'popularity', sortProperty: 'rating' },
-    { name: 'price', sortProperty: 'price' },
-    { name: 'alphabet', sortProperty: 'title' },
-  ];
-
-  const onClickSelectedSort = (index) => {
-    onClickSort(index);
+  const onClickSelectedSort = (obj) => {
+    dispatch(setSort(obj));
     setIsSortVisible(false);
   };
 
@@ -24,7 +29,7 @@ const Sort = ({ value, onClickSort }) => {
           />
         </svg>
         <b>Sort by:</b>
-        <span onClick={() => setIsSortVisible(!isSortVisible)}>{value.name}</span>
+        <span onClick={() => setIsSortVisible(!isSortVisible)}>{selectedSort.name}</span>
       </div>
 
       {isSortVisible && (
@@ -34,7 +39,7 @@ const Sort = ({ value, onClickSort }) => {
               <li
                 key={index}
                 onClick={() => onClickSelectedSort(obj)}
-                className={value.sortProperty === obj.sortProperty ? 'active' : ''}
+                className={selectedSort.sortProperty === obj.sortProperty ? 'active' : ''}
               >
                 {obj.name}
               </li>

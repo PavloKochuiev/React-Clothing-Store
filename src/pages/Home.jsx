@@ -6,21 +6,29 @@ import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
 import { SearchContext } from '../App';
 import { useContext } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setActiveCategory } from '../redux/slices/filterSlice';
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const activeCategory = useSelector((state) => state.filterSlice.activeCategory);
+  const selectedSort = useSelector((state) => state.filterSlice.selectedSort.sortProperty);
+ 
   const { searchValue } = useContext(SearchContext);
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeCategory, setActiveCategory] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedSort, setSelectedSort] = useState({ name: 'popularity', sortProperty: 'rating' });
+
+  const onClickCategory = (id) => {
+    dispatch(setActiveCategory(id));
+  };
 
   useEffect(() => {
     setIsLoading(true);
     fetch(
       `https://63501d4edf22c2af7b63d4a3.mockapi.io/items?page=${currentPage}&limit=4&${
         activeCategory > 0 ? `category=${activeCategory}` : ''
-      }&sortBy=${selectedSort.sortProperty}&order=desc`,
+      }&sortBy=${selectedSort}&order=desc`,
     )
       .then((res) => {
         return res.json();
@@ -45,8 +53,8 @@ const Home = () => {
   return (
     <div className='container'>
       <div className='content__top'>
-        <Categories value={activeCategory} onClickCategory={(index) => setActiveCategory(index)} />
-        <Sort value={selectedSort} onClickSort={(index) => setSelectedSort(index)} />
+        <Categories value={activeCategory} onClickCategory={onClickCategory} />
+        <Sort />
       </div>
       <h2 className='content__title'>All items</h2>
       <div className='content__items'>
