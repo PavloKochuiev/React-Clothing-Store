@@ -6,21 +6,16 @@ import Error from '../components/Error';
 import Pagination from '../components/Pagination';
 
 import { useEffect } from 'react';
-import { SearchContext } from '../App';
-import { useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setActiveCategory, setCurrentPage } from '../redux/slices/filterSlice';
-import { fetchItems } from '../redux/slices/itemsSlice';
+import { filterSelector, setActiveCategory, setCurrentPage } from '../redux/slices/filterSlice';
+import { fetchItems, itemsSelector } from '../redux/slices/itemsSlice';
 
 const Home = () => {
   const dispatch = useDispatch();
 
-  const activeCategory = useSelector((state) => state.filterSlice.activeCategory);
   const selectedSort = useSelector((state) => state.filterSlice.selectedSort.sortProperty);
-  const currentPage = useSelector((state) => state.filterSlice.currentPage);
-  const { items, status } = useSelector((state) => state.itemsSlice);
-
-  const { searchValue } = useContext(SearchContext);
+  const { activeCategory, currentPage, searchValue } = useSelector(filterSelector);
+  const { items, status } = useSelector(itemsSelector);
 
   const onClickCategory = (id) => {
     dispatch(setActiveCategory(id));

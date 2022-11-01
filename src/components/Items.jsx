@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from '../redux/slices/cartSlice';
+import { addItem, cartSelectorItemByid } from '../redux/slices/cartSlice';
 
 const Items = ({ id, title, price, image, sizes }) => {
   const dispatch = useDispatch();
   const [activeSize, setActiveSize] = useState(0);
 
-  const cartItem = useSelector((state) => state.cartSlice.items.find((obj) => obj.id === id));
+  const cartItem = useSelector(cartSelectorItemByid(id));
   const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
