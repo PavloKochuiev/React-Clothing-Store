@@ -5,8 +5,6 @@ import Cart from './pages/Cart';
 import FullItem from './pages/FullItem';
 
 import { Routes, Route } from 'react-router-dom';
-import { setSearchValue } from './redux/slices/filterSlice';
-import React, { createContext, useState } from 'react';
 
 import './scss/app.scss';
 

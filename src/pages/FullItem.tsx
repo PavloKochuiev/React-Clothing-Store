@@ -3,9 +3,13 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-const FullItem = () => {
+const FullItem: React.FC = () => {
   const { id } = useParams();
-  const [item, setItem] = useState();
+  const [item, setItem] = useState<{
+    image: string;
+    title: string;
+    price: number;
+  }>();
 
   useEffect(() => {
     async function fetchItem() {
