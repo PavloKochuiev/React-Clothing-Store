@@ -1,4 +1,4 @@
-const Error = () => {
+const Error: React.FC = () => {
   return (
     <div className='content__error-info'>
       <h2>An error has occurred!</h2>

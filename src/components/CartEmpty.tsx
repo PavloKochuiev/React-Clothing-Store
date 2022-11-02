@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom';
 
-const CartEmpty = () => {
+const CartEmpty: React.FC = () => {
   return (
-    <div class='container container--cart'>
-      <div class='cart cart--empty'>
+    <div className='container container--cart'>
+      <div className='cart cart--empty'>
         <h2>
-          Cart is empty <icon>😕</icon>
+          Cart is empty <span>😕</span>
         </h2>
         <p>
           Most likely, you have not added anything to your cart.
           <br />
           To add something, go to the main page.
         </p>
-        <Link to='/' class='button button--black'>
+        <Link to='/' className='button button--black'>
           <span>Back</span>
         </Link>
       </div>

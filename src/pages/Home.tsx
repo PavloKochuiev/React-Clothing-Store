@@ -11,35 +11,36 @@ import { filterSelector, setActiveCategory, setCurrentPage } from '../redux/slic
 import { fetchItems, itemsSelector } from '../redux/slices/itemsSlice';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const Home: React.FC = () => {
   const dispatch = useDispatch();
 
-  const selectedSort = useSelector((state) => state.filterSlice.selectedSort.sortProperty);
+  const selectedSort = useSelector((state: any) => state.filterSlice.selectedSort.sortProperty);
   const { activeCategory, currentPage, searchValue } = useSelector(filterSelector);
   const { items, status } = useSelector(itemsSelector);
 
-  const onClickCategory = (id) => {
+  const onClickCategory = (id: number) => {
     dispatch(setActiveCategory(id));
   };
 
-  const onChangePage = (number) => {
-    dispatch(setCurrentPage(number));
+  const onChangePage = (value: number) => {
+    dispatch(setCurrentPage(value));
   };
 
   const getItems = async () => {
+    // @ts-ignore
     dispatch(fetchItems({ activeCategory, currentPage, selectedSort }));
 
     window.scrollTo(0, 0);
   };
 
   const filteredItems = items
-    .filter((obj) => {
+    .filter((obj: any) => {
       if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
         return true;
       }
       return false;
     })
-    .map((obj) => (
+    .map((obj: any) => (
       <Link key={obj.id} to={`item/${obj.id}`}>
         {' '}
         <Items {...obj} />

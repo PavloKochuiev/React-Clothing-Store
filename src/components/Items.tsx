@@ -2,7 +2,15 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, cartSelectorItemByid } from '../redux/slices/cartSlice';
 
-const Items = ({ id, title, price, image, sizes }) => {
+type ItemsProps = {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+  sizes: string[];
+};
+
+const Items: React.FC<ItemsProps> = ({ id, title, price, image, sizes }) => {
   const dispatch = useDispatch();
   const [activeSize, setActiveSize] = useState(0);
 
