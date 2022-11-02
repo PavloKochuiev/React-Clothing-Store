@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterSelector, setActiveCategory, setCurrentPage } from '../redux/slices/filterSlice';
 import { fetchItems, itemsSelector } from '../redux/slices/itemsSlice';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -38,7 +39,12 @@ const Home = () => {
       }
       return false;
     })
-    .map((obj) => <Items key={obj.id} {...obj} />);
+    .map((obj) => (
+      <Link key={obj.id} to={`item/${obj.id}`}>
+        {' '}
+        <Items {...obj} />
+      </Link>
+    ));
 
   useEffect(() => {
     getItems();
