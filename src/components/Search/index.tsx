@@ -1,5 +1,5 @@
 import closeIcon from '../../assets/img/closeIcon.png';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import debounce from 'lodash.debounce';
 
 import styles from './Search.module.scss';
@@ -13,7 +13,7 @@ const Search: React.FC = () => {
   const [value, setValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const onClickClear = () => {
+  const onClickClear = (event: React.MouseEvent<HTMLImageElement>) => {
     dispatch(setSearchValue(''));
     setValue('');
     inputRef.current?.focus();
@@ -26,7 +26,7 @@ const Search: React.FC = () => {
     [],
   );
 
-  const onChangeInput = (event: any) => {
+  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
   };
