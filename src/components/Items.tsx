@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem, cartSelectorItemByid } from '../redux/slices/cartSlice';
+import { Link } from 'react-router-dom';
+import { addItem, CartItem, cartSelectorItemByid } from '../redux/slices/cartSlice';
 
 type ItemsProps = {
-  id: number;
+  id: string;
   title: string;
   price: number;
   image: string;
@@ -18,7 +19,7 @@ const Items: React.FC<ItemsProps> = ({ id, title, price, image, sizes }) => {
   const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
-    const item = {
+    const item: CartItem = {
       id,
       title,
       price,
@@ -31,8 +32,10 @@ const Items: React.FC<ItemsProps> = ({ id, title, price, image, sizes }) => {
   return (
     <div className='items-wrapper'>
       <div className='items'>
-        <img className='items__image' src={image} alt={title} />
-        <h4 className='items__title'>{title}</h4>
+        <Link key={id} to={`item/${id}`}>
+          <img className='items__image' src={image} alt={title} />
+          <h4 className='items__title'>{title}</h4>
+        </Link>
         <div className='items__selector'>
           <ul>
             {sizes.map((size, index) => (

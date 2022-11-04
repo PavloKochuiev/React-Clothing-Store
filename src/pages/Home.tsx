@@ -6,13 +6,13 @@ import Error from '../components/Error';
 import Pagination from '../components/Pagination';
 
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { filterSelector, setActiveCategory, setCurrentPage } from '../redux/slices/filterSlice';
 import { fetchItems, itemsSelector } from '../redux/slices/itemsSlice';
-import { Link } from 'react-router-dom';
+import { useAppDispatch } from '../redux/store';
 
 const Home: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const selectedSort = useSelector((state: any) => state.filterSlice.selectedSort.sortProperty);
   const { activeCategory, currentPage, searchValue } = useSelector(filterSelector);
@@ -27,8 +27,7 @@ const Home: React.FC = () => {
   };
 
   const getItems = async () => {
-    // @ts-ignore
-    dispatch(fetchItems({ activeCategory, currentPage, selectedSort }));
+    dispatch(fetchItems({ activeCategory, currentPage: String(currentPage), selectedSort }));
 
     window.scrollTo(0, 0);
   };
@@ -40,12 +39,7 @@ const Home: React.FC = () => {
       }
       return false;
     })
-    .map((obj: any) => (
-      <Link key={obj.id} to={`item/${obj.id}`}>
-        {' '}
-        <Items {...obj} />
-      </Link>
-    ));
+    .map((obj: any) => <Items key={obj.id} {...obj} />);
 
   useEffect(() => {
     getItems();
