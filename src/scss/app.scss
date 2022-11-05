@@ -4,7 +4,7 @@
 @import './components/all.scss';
 
 body {
-  background-color: $background;
+  background-image: url('../assets/img/wallpaper.jpeg');
 }
 
 .wrapper {
@@ -52,7 +52,7 @@ body {
   &__items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 10px;
 
     @media (max-width: 1440px) {
@@ -305,7 +305,7 @@ body {
 
         &:last-of-type {
           b {
-            color: $orange;
+            color: $purple;
           }
         }
       }
