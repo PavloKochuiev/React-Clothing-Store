@@ -5,7 +5,7 @@ import Loader from '../components/Loader';
 import Error from '../components/Error';
 import Pagination from '../components/Pagination';
 
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { filterSelector, setActiveCategory, setCurrentPage } from '../redux/slices/filterSlice';
 import { fetchItems, itemsSelector } from '../redux/slices/itemsSlice';
@@ -18,9 +18,9 @@ const Home: React.FC = () => {
   const { activeCategory, currentPage, searchValue } = useSelector(filterSelector);
   const { items, status } = useSelector(itemsSelector);
 
-  const onClickCategory = (id: number) => {
+  const onClickCategory = useCallback((id: number) => {
     dispatch(setActiveCategory(id));
-  };
+  }, []);
 
   const onChangePage = (value: number) => {
     dispatch(setCurrentPage(value));
