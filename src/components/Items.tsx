@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addItem, CartItem, cartSelectorItemByid } from '../redux/slices/cartSlice';
+import { cartSelectorItemByid } from '../redux/cart/selectors';
+import { addItem } from '../redux/cart/slice';
+import { CartItem } from '../redux/cart/types';
 
 type ItemsProps = {
   id: string;
@@ -16,7 +18,7 @@ const Items: React.FC<ItemsProps> = ({ id, title, price, image, sizes }) => {
   const [activeSize, setActiveSize] = useState(0);
 
   const cartItem = useSelector(cartSelectorItemByid(id));
-  const addedCount = cartItem ? cartItem.count : 0;
+  const addedCount: any = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
     const item: CartItem = {

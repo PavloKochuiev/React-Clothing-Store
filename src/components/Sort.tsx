@@ -22,6 +22,7 @@ const Sort = () => {
   const [isSortVisible, setIsSortVisible] = useState(false);
 
   const onClickSelectedSort = (obj: SortItem) => {
+    // @ts-ignore
     dispatch(setSort(obj));
     setIsSortVisible(false);
   };
