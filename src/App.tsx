@@ -16,7 +16,7 @@ const App = () => {
         <Routes>
           <Route path='/React-Clothing-Store' element={<Home />} />
           <Route path='/cart' element={<Cart />} />
-          <Route path='/item/:id' element={<FullItem />} />
+          <Route path='/React-Clothing-Store/item/:id' element={<FullItem />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
