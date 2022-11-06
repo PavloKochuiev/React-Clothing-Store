@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/React-Clothing-Store/static/css/main.636cad4f.css",
+    "main.js": "/React-Clothing-Store/static/js/main.6582dfc2.js",
+    "static/media/wallpaper.jpeg": "/React-Clothing-Store/static/media/wallpaper.c6fca3751f4dd770a1fd.jpeg",
+    "static/media/logo.png": "/React-Clothing-Store/static/media/logo.bab55cbfb65cbab2673a.png",
+    "index.html": "/React-Clothing-Store/index.html",
+    "main.636cad4f.css.map": "/React-Clothing-Store/static/css/main.636cad4f.css.map",
+    "main.6582dfc2.js.map": "/React-Clothing-Store/static/js/main.6582dfc2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.636cad4f.css",
+    "static/js/main.6582dfc2.js"
+  ]
+}
