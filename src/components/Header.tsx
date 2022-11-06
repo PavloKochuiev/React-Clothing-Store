@@ -25,7 +25,7 @@ const Header: React.FC = () => {
   return (
     <div className='header'>
       <div className='container'>
-        <Link to='/'>
+        <Link to='/React-Clothing-Store'>
           <div className='header__logo'>
             <img width='60' src={logo} alt='react clothing store logo' />
             <div>

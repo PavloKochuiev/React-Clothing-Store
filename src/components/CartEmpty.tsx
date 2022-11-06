@@ -12,7 +12,7 @@ const CartEmpty: React.FC = () => {
           <br />
           To add something, go to the main page.
         </p>
-        <Link to='/' className='button button--black'>
+        <Link to='/React-Clothing-Store' className='button button--black'>
           <span>Back</span>
         </Link>
       </div>
